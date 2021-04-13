@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+:root {
+  --primary-color: #007AF3;
+}
+
+body {
+  background: #F2F2F2;
+  margin: 0;
+  font-family: 'Poppins';
+}
+
+/*class for javascript (when menu button is clicked, add the contents of this class
+to the contents of nav*/
+.menu-btn {
+  display: block;
+}
+
+nav {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  width: 50%;
+  right: 0;
+  top: 0;
+  background: #20272E;
+  height: 100vh;
+  padding: 1em;
+}
+
+nav .primary-nav {
+  margin-top: 5em;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: .5em;
+  font-size: 1.3em;
+  text-align: right;
+}
+
+nav li a:hover {
+  font-weight: bold;
+}
+
+.mobile-menu-exit {
+  float: right;
+  cursor: pointer;
+  margin: .5em;
+}
+
+.navbar {
+  background: white;
+  padding: 1em;
+}
+
+.navbar .logo {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.navbar .logo span {
+  color: var(--primary-color);
+}
+
+.navbar .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navbar .mobile-menu {
+  cursor: pointer;
+}
+
+a {
+  color: #444444;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+section {
+  padding: 5em 2em;
+}
+
+.hero {
+  text-align: center;
+}
+
+.left-col .subhead {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: gray;
+  letter-spacing: .3em;
+}
+
+.left-col h1 {
+  font-size: 2.5em;
+  line-height: 1.3em;
+  margin-top: .2em;
+}
+
+.left-col .primary-cta {
+  padding: .6em 1.3em;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.4em;
+  background: var(--primary-color);
+  border-radius: 5em;
+  display: inline-block;
+}
+
+.left-col .watch-vid-cta {
+  display: block;
+  margin-top: 1em;
+}
+
+.left-col .watch-vid-cta img {
+  margin-right: .5em;
+}
+
+.hero-img {
+  width: 70%;
+  margin-top: 3em;
+  max-height: 400px;
+  max-width: 400px;
+}
+
+.features-section {
+  background: #20272E;
+  color: white;
+}
+
+.features-section img {
+  display: none;
+  /*will display in larger media query*/
+}
+
+.features-section ul {
+  font-size: 1.1em;
+  margin: 0;
+  padding-left: .1em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(19rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+}
+
+.features-section ul li {
+  margin-bottom: 1em;
+  margin-left: 2em;
+  position: relative;
+}
+
+.features-section ul li:before {
+  left: -2em;
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-image: url("/images/bullet.svg");
+  background-size: contain;
+  margin-right: 1em;
+}
+
+.testimonials-section {
+  background: var(--primary-color);
+  color: white;
+}
+
+.testimonials-section li {
+  background: #006BD6;
+  margin: 0 auto 5em auto;
+  text-align: center;
+  border-radius: 1em;
+  padding: 2em 1em;
+  width: 80%;
+  max-width: 20em;
+}
+
+.testimonials-section img {
+  height: 5em;
+  border: 5px solid #006BD6;
+  border-radius: 50%;
+  position: relative;
+  margin-top: -4.5em;
+}
+
+.contact-section {
+  /* try to center left contact column when smaller screen?*/
+}
+
+.contact-section h2 {
+  font-size: 2em;
+}
+
+.contact-section label {
+  font-size: 1.2em;
+  display: block;
+  margin-bottom: .5em;
+}
+
+.contact-section input, .contact-section textarea {
+  width: 100%;
+  display: block;
+  border-radius: .3em;
+  border: 1px solid grey;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 1.5em;
+  padding: .8em;
+  resize: vertical;
+  max-height: 20em;
+  max-width: 550px;
+}
+
+#submit-btn {
+  padding: .8em 2em;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.4em;
+  background: var(--primary-color);
+  border-radius: 5em;
+  display: inline-block;
+  border: none;
+  margin-bottom: 5em;
+  cursor: pointer;
+  width: unset;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+}
+
+/*===============================================================================================================================*/
+/*==                                  Media Queries                                                                            ==*/
+/*===============================================================================================================================*/
+/*these rulesets will only be applied when the window is bigger than 768px*/
+@media only screen and (min-width: 768px) {
+  /*hide hamburger menu button*/
+  .mobile-menu, .mobile-menu-exit {
+    display: none;
+  }
+  .navbar .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 180px auto;
+        grid-template-columns: 180px auto;
+    /*The logo will take up 180px and NAV will take the rest of the space */
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+  }
+  .navbar nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background: none;
+    position: unset;
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  .navbar nav .primary-nav {
+    /*get rid of whitespace created by margin-top for mobile menu*/
+    margin: 0px;
+  }
+  .navbar nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .navbar nav li a {
+    color: black;
+    padding: .1em 1em;
+    font-size: 1em;
+  }
+  .navbar nav li #current {
+    font-weight: bold;
+  }
+  .navbar nav li.go-premium-cta a {
+    background: transparent;
+    border: 3px solid var(--primary-color);
+    border-radius: 5em;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: -.2em;
+  }
+  .navbar nav li.go-premium-cta a:hover {
+    background: var(--primary-color);
+    color: white;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .container {
+    width: 1080px;
+    margin: 0 auto;
+  }
+  section {
+    padding: 10em 4em;
+  }
+  .hero .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: left;
+  }
+  .hero .container .hero-cta {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .hero .container .primary-cta {
+    margin-right: 1em;
+  }
+  .hero .container .hero-img {
+    width: 30%;
+    margin-right: 8em;
+  }
+  .hero .container .left-col {
+    margin: 3em 3em 0 5em;
+  }
+  .hero .container .left-col h1 {
+    font-size: 3em;
+    width: 90%;
+  }
+  .features-section {
+    position: relative;
+  }
+  .features-section img {
+    display: block;
+    position: absolute;
+    width: 350px;
+    right: 0;
+    bottom: -2em;
+  }
+  .features-section ul {
+    display: block;
+  }
+  .features-section ul li {
+    font-size: 1.4em;
+  }
+  .features-section ul li:before {
+    width: 30px;
+    height: 30px;
+  }
+  .testimonials-section ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .testimonials-section ul li {
+    margin: 0 1em;
+  }
+  .contact-section {
+    position: relative;
+  }
+  .contact-section input, .contact-section textarea {
+    display: inline-block;
+  }
+  .contact-section .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .contact-section .container .contact-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+  }
+  .contact-section .container .contact-right iframe {
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: 1450px) {
+  .features-section:before {
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 20em;
+    background: var(--primary-color);
+    left: 0;
+    top: -4em;
+  }
+  .features-section:after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 20em;
+    background: url(images/dots.svg) no-repeat;
+    left: 4.5em;
+    top: 2em;
+  }
+}
+/*# sourceMappingURL=main.css.map */
